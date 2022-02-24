@@ -51,7 +51,7 @@ void ATank::Move(float value)
 	float moveOffset = deltaTime * value * MoveSpeed;
 	
 	if (RootComponent) {
-		RootComponent->AddLocalOffset(FVector(moveOffset, 0, 0));
+		RootComponent->AddLocalOffset(FVector(moveOffset, 0, 0), true);
 	}
 }
 
@@ -71,7 +71,7 @@ void ATank::Turn(float value)
 	float moveOffset = deltaTime * value * TurnSpeed;
 
 	if (RootComponent) {
-		RootComponent->AddLocalRotation(FRotator(0, moveOffset, 0));
+		RootComponent->AddLocalRotation(FRotator(0, moveOffset, 0), true);
 	}
 }
 
